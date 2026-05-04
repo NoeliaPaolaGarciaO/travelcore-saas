@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Clientes</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+</head>
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+    <h2>TravelCore</h2>
+    <a href="index.html">Dashboard</a>
+    <a href="files.html">Files</a>
+    <a href="clientes.html">Clientes</a>
+    <a href="proveedores.html">Proveedores</a>
+    <a href="vouchers.html">Vouchers</a>
+</aside>
+
+<main class="main">
+
+<h1>Clientes</h1>
+
+<!-- FORM -->
+<div class="box">
+
+<input id="nombreCliente" placeholder="Nombre">
+<input id="apellidoCliente" placeholder="Apellido">
+<input id="fechadenacimiento" placeholder="Fecha de Nacimiento">
+<input id="Cuit" placeholder="CUIT">
+<input id="cuil" placeholder="CUIL">
+<input id="dni" placeholder="DNI">
+<input id="fechadeemisiondni" placeholder="Fecha de emisión DNI">
+<input id="fechadevencimientodni" placeholder="Fecha de vencimiento DNI">
+<input id="pasaporte" placeholder="Pasaporte">
+<input id="fechadeemisionpasaporte" placeholder="Fecha de emisión Pasaporte">
+<input id="fechadevencimientopasaporte" placeholder="Fecha de vencimiento Pasaporte">
+<input id="direccioncliente" placeholder="Dirección">
+<input id="telefonocliente" placeholder="Teléfono">
+<input id="nombreyapellidocontactodeemergencia" placeholder="Contacto de Emergencia">
+<input id="telefonocontactodeemergencia" placeholder="Teléfono Contacto de Emergencia">
+
+<button onclick="crearCliente()">Guardar</button>
+
+</div>
+
+<!-- BUSCADOR + FILTRO -->
+<div class="box">
+<input id="buscadorCliente" placeholder="Buscar cliente...">
+
+<select id="filtroClientes">
+<option value="">Todos</option>
+<option value="menores">Menores</option>
+<option value="dni_vencido">DNI vencido</option>
+</select>
+</div>
+
+<!-- ALERTAS -->
+<div id="alertasClientes"></div>
+
+<!-- LISTADO -->
+<h2>Listado</h2>
+<div id="listaClientes"></div>
+
+</main>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modalEditar">
+<div class="modal-content">
+    <h3>Editar Cliente</h3>
+    <input id="editNombre">
+    <input id="editApellido">
+    <button onclick="guardarEdicion()">Guardar</button>
+</div>
+</div>
+
+<script src="js/supabase.js"></script>
+<script src="js/clientes.js"></script>
+
+</body>
+</html>

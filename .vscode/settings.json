@@ -1,0 +1,8 @@
+{
+  "deno.enable": true,
+  "deno.unstable": true,
+  "deno.lint": true,
+  "deno.enablePaths": ["supabase/functions"],
+  "js/ts.tsserver.experimental.enableProjectDiagnostics": false,
+  "json.validate.enable": false
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+    <img id="logoAgencia" style="width:120px;">
+    <h2 id="nombreAgencia">TravelCore</h2>
+
+    <a href="index.html">Dashboard</a>
+    <a href="clientes.html">Clientes</a>
+    <a href="files.html">Files</a>
+    <a href="proveedores.html">Proveedores</a>
+    <a href="vouchers.html">Vouchers</a>
+    <a href="usuarios.html">Usuarios</a>
+
+    <button onclick="logout()">Salir</button>
+</aside>
+
+<main class="main">
+
+<h1>Panel Financiero</h1>
+
+<div class="card"><h3 id="fIngresos">$0</h3><p>Ingresos</p></div>
+<div class="card"><h3 id="fEgresos">$0</h3><p>Egresos</p></div>
+<div class="card"><h3 id="fGanancia">$0</h3><p>Ganancia</p></div>
+
+</main>
+
+</div>
+
+<script src="js/supabase.js"></script>
+<script src="js/app.js"></script>
+<script>
+if(!localStorage.getItem("usuarioActivo")){
+    window.location.href = "login.html";
+}
+</script>
+</body>
+</html>

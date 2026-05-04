@@ -1,0 +1,109 @@
+:root {
+  --violeta-deep: #6A0DAD;
+  --violeta-soft: #9B5DE5;
+  --turquesa-strong: #00BFA6;
+  --turquesa-mid: #2EC4B6;
+  --aqua-light: #70F0E0;
+  --aqua-pastel: #BCF7EC;
+
+  --bg-dark: #0f0f1a;
+  --card: #1c1c2e;
+  --text: #ffffff;
+  --muted: #a0a0b5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--violeta-deep), var(--turquesa-strong));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Layout */
+.app {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px;
+  margin: 5px 0;
+  border-radius: 10px;
+  color: var(--aqua-light);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background: var(--violeta-soft);
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 30px;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  margin: 10px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  font-size: 28px;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(90deg, var(--turquesa-strong), var(--violeta-soft));
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Login */
+.login-container {
+  max-width: 360px;
+  margin: 120px auto;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Admin SaaS</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+<h1>Panel Admin SaaS</h1>
+
+<h2>Agencias</h2>
+<div id="listaAgencias"></div>
+
+<h2>Usuarios</h2>
+<div id="listaUsuarios"></div>
+
+<h2>Bloqueo por plan</h2>
+<button onclick="bloquearAgenciasFree()">Bloquear Free</button>
+
+<script src="js/supabase.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+</html>

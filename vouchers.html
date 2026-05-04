@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Voucher</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+
+<div id="voucherBox" class="box">
+
+<h1 style="color:#6d28d9;">✈ TravelCore</h1>
+
+<h2 id="vCliente"></h2>
+<p id="vConcepto"></p>
+
+<h3>Pasajeros</h3>
+<div id="vPasajeros"></div>
+
+</div>
+
+<button onclick="descargarPDF()">Descargar PDF</button>
+<button onclick="enviarWhatsApp()">Enviar WhatsApp</button>
+
+<script src="js/supabase.js"></script>
+<script src="js/vouchers.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Files</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+</head>
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+    <h2>TravelCore</h2>
+    <a href="index.html">Dashboard</a>
+    <a href="files.html">Files</a>
+    <a href="clientes.html">Clientes</a>
+    <a href="vouchers.html">Vouchers</a>
+</aside>
+
+<main class="main">
+
+<h1>Crear File</h1>
+
+<div class="box">
+
+<!-- BUSCADOR -->
+<input id="buscadorCliente" placeholder="Buscar cliente...">
+
+<select id="fCliente"></select>
+
+<div id="fichaCliente"></div>
+
+<hr>
+
+<!-- ACOMPAÑANTES -->
+<h3>Acompañantes</h3>
+
+<select id="selectAcompanante"></select>
+<button onclick="agregarAcompanante()">Agregar</button>
+
+<div id="listaAcompanantes"></div>
+
+<hr>
+
+<input id="fConcepto" placeholder="Concepto">
+
+<button onclick="guardarFile()">Guardar File</button>
+
+</div>
+
+<h2>Listado</h2>
+<table>
+<tbody id="tablaFiles"></tbody>
+</table>
+
+</main>
+</div>
+
+<h3>Pagos a Proveedores</h3>
+
+<select id="selectProveedor"></select>
+<select id="selectCuenta"></select>
+
+<input id="montoProveedor" placeholder="Monto">
+<button onclick="agregarPagoProveedor()">Agregar Pago</button>
+
+<div id="listaPagosProveedor"></div>
+
+<script src="js/supabase.js"></script>
+<script src="js/files.js"></script>
+
+</body>
+</html>

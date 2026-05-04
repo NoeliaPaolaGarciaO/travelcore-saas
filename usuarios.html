@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Usuarios</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+    <h2>TravelCore</h2>
+    <a href="index.html">Dashboard</a>
+    <a href="usuarios.html">Usuarios</a>
+</aside>
+
+<main class="main">
+
+<h1>Usuarios</h1>
+
+<div class="card">
+
+<input id="emailNuevo" placeholder="Email">
+<input id="passwordNuevo" type="password" placeholder="Password">
+
+<select id="rolNuevo">
+<option value="admin">Admin</option>
+<option value="vendedor">Vendedor</option>
+</select>
+
+<button onclick="crearUsuario()">Crear Usuario</button>
+
+</div>
+
+<div id="listaUsuarios"></div>
+
+</main>
+</div>
+
+<script src="js/supabase.js"></script>
+<script src="js/usuarios.js"></script>
+
+</body>
+</html>

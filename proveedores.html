@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Proveedores</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+    <h2>TravelCore</h2>
+    <a href="index.html">Dashboard</a>
+    <a href="files.html">Files</a>
+    <a href="clientes.html">Clientes</a>
+    <a href="proveedores.html">Proveedores</a>
+    <a href="vouchers.html">Vouchers</a>
+</aside>
+
+<main class="main">
+
+<h1>Proveedores</h1>
+
+<div class="box">
+    <input id="nombreProveedor" placeholder="Nombre proveedor">
+    <input id="razonSocial" placeholder="Razón social">
+    <input id="cuitProveedor" placeholder="CUIT">
+
+    <button onclick="crearProveedor()">Guardar</button>
+</div>
+
+<hr>
+
+<h3>Cuentas Bancarias</h3>
+
+<select id="selectProveedorCuenta"></select>
+
+<input id="banco" placeholder="Banco">
+<input id="moneda" placeholder="Moneda (ARS/USD)">
+<input id="cbu" placeholder="CBU">
+<input id="alias" placeholder="Alias">
+<input id="numeroCuenta" placeholder="Número de cuenta">
+
+<button onclick="crearCuenta()">Agregar Cuenta</button>
+
+<div id="listaCuentas"></div>
+
+<hr>
+
+<h2>Listado</h2>
+<div id="listaProveedores"></div>
+
+</main>
+</div>
+
+<script src="js/supabase.js"></script>
+<script src="js/proveedores.js"></script>
+
+</body>
+</html>

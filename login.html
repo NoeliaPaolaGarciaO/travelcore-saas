@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body class="login-body">
+
+<div class="login-box">
+
+<img id="logoLogin" style="width:120px">
+
+<h2 id="tituloLogin">TravelCore</h2>
+
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Ingresar</button>
+
+<hr>
+
+<button onclick="registro()">Crear cuenta</button>
+
+</div>
+
+<script src="js/supabase.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>
