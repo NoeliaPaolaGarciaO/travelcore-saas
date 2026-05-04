@@ -182,7 +182,7 @@ Proyecto en evolución 🚀
 
 ## 📬 Contacto
 
-(agregar email o redes)
+noeeegarcia@gmail.com
 
 ---
 
