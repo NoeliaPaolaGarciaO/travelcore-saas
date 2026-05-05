@@ -11,107 +11,28 @@ TravelCore es un sistema multi-tenant pensado para agencias de turismo que neces
 
 - 📁 Gestión de archivos (viajes)
 - 👥 Clientes
-- 🧾 Vouchers públicos
+- 🧾 Vouchers
 - 🏦 Proveedores y cuentas
 - 📊 Dashboard financiero
 - 💳 Suscripciones tipo SaaS (Stripe-ready)
 
 ---
 
-## 🧠 Stack Tecnológico
+## 🧩 Cómo contribuir
 
-- Frontend: HTML + CSS + JS
-- Backend: Supabase (Auth + DB + Edge Functions)
-- Base de datos: PostgreSQL
-- Pagos: Stripe
-- Hosting: (pendiente deploy)
+1. Fork del repo
+2. Crear branch:
+   git checkout -b feature/nueva-funcion
+3. Hacer cambios
+4. Push:
+   git push origin feature/nueva-funcion
+5. Crear Pull Request
 
----
+## ⚠️ Reglas
 
-## 🏗️ Arquitectura
-
-- Multi-tenant por `agencia_id`
-- Autenticación con Supabase Auth
-- Datos aislados por agencia
-- Edge Functions para pagos (Stripe)
-
----
-
-## 🚀 Cómo levantar el proyecto
-
-### 1. Clonar repo
-
-```bash
-git clone https://github.com/TU_USUARIO/travelcore-saas.git
-cd travelcore-saas
-```
-
----
-
-### 2. Configurar Supabase
-
-Crear archivo:
-
-```
-js/supabase.js
-```
-
-```js
-const SUPABASE_URL = "TU_URL";
-const SUPABASE_KEY = "TU_PUBLIC_KEY";
-
-window.supabase = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
-```
-
----
-
-### 3. Ejecutar SQL
-
-Ir a Supabase → SQL Editor  
-Ejecutar el script completo de tablas
-
----
-
-### 4. Correr local
-
-Abrir con Live Server:
-
-```
-login.html
-```
-
----
-
-## 🔐 Variables sensibles
-
-NO subir:
-
-- STRIPE_SECRET
-- SERVICE_ROLE_KEY
-- Webhooks secrets
-
----
-
-## 👤 Roles
-
-- `admin` → control total
-- `ventas` → operaciones
-- (expandible)
-
----
-
-## 💳 Sistema SaaS
-
-- Trial automático (10 días)
-- Suscripción mensual
-- Bloqueo por vencimiento
-- Integración con Stripe
-
----
-
+- No tocar producción sin aprobación
+- Mantener código limpio
+- No romper funcionalidades existentes
 ## 🤝 Contribuciones
 
 Este proyecto acepta colaboración, pero bajo estas reglas:
