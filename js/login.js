@@ -1,5 +1,8 @@
 console.log("LOGIN PRO FINAL");
 
+// =======================
+// LOGIN
+// =======================
 async function login(){
 
     const { data, error } = await supabase.auth.signInWithPassword({
@@ -14,13 +17,22 @@ async function login(){
 
     const user = data.user;
 
-    let { data: usuarioDB } = await supabase
+    if(!user){
+        alert("Error de login");
+        return;
+    }
+
+    // buscar usuario interno
+    let { data: usuarioDB, error: errUser } = await supabase
         .from("usuarios")
         .select("*")
         .eq("auth_id", user.id)
         .single();
 
-    if(!usuarioDB){
+    // AUTO CREAR SI NO EXISTE
+    if(errUser || !usuarioDB){
+
+        console.log("Creando usuario interno...");
 
         let { data: agencia } = await supabase
             .from("agencias")
@@ -29,7 +41,7 @@ async function login(){
             .single();
 
         if(!agencia){
-            const { data: nueva } = await supabase
+            const { data: nuevaAgencia } = await supabase
                 .from("agencias")
                 .insert([{
                     nombre: "Demo",
@@ -38,10 +50,10 @@ async function login(){
                 .select()
                 .single();
 
-            agencia = nueva;
+            agencia = nuevaAgencia;
         }
 
-        const { data: nuevo } = await supabase
+        const { data: nuevoUsuario } = await supabase
             .from("usuarios")
             .insert([{
                 email: user.email,
@@ -52,20 +64,24 @@ async function login(){
             .select()
             .single();
 
-        usuarioDB = nuevo;
+        usuarioDB = nuevoUsuario;
     }
 
     localStorage.setItem("usuarioActivo", JSON.stringify(usuarioDB));
+
     window.location.href = "index.html";
 }
 
+// =======================
+// REGISTRO
+// =======================
 async function registro(){
 
     const nombreAgencia = prompt("Nombre de tu agencia");
     if(!nombreAgencia) return;
 
     if(password.value.length < 6){
-        alert("Mínimo 6 caracteres");
+        alert("Password mínimo 6 caracteres");
         return;
     }
 
@@ -80,12 +96,13 @@ async function registro(){
     }
 
     if(!data.user){
-        alert("Revisá tu email 📩");
+        alert("Revisá tu email para confirmar la cuenta 📩");
         return;
     }
 
     const user = data.user;
 
+    // crear agencia
     const { data: agencia } = await supabase
         .from("agencias")
         .insert([{
@@ -95,6 +112,7 @@ async function registro(){
         .select()
         .single();
 
+    // crear usuario interno
     const { data: usuarioDB } = await supabase
         .from("usuarios")
         .insert([{
@@ -107,5 +125,8 @@ async function registro(){
         .single();
 
     localStorage.setItem("usuarioActivo", JSON.stringify(usuarioDB));
+
+    alert("Cuenta creada 🚀");
+
     window.location.href = "index.html";
 }

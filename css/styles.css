@@ -107,3 +107,48 @@ input {
   border-radius: 10px;
   border: none;
 }
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background: linear-gradient(135deg,#6A0DAD,#00BFA6);
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.hero p{
+    font-size:18px;
+    opacity:0.9;
+}
+
+.cta{
+    margin-top:20px;
+}
+
+.btn{
+    background:#00BFA6;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    margin:5px;
+}
+
+.btn.secondary{
+    background:transparent;
+    border:1px solid white;
+}
+
+.features{
+    display:flex;
+    gap:20px;
+    padding:40px;
+}
+
+.pricing{
+    text-align:center;
+    padding:40px;
+}
