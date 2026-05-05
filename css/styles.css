@@ -1,154 +1,221 @@
-:root {
-  --violeta-deep: #6A0DAD;
-  --violeta-soft: #9B5DE5;
-  --turquesa-strong: #00BFA6;
-  --turquesa-mid: #2EC4B6;
-  --aqua-light: #70F0E0;
-  --aqua-pastel: #BCF7EC;
-
-  --bg-dark: #0f0f1a;
-  --card: #1c1c2e;
-  --text: #ffffff;
-  --muted: #a0a0b5;
+/* =======================
+   RESET
+======================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+/* =======================
+   VARIABLES (PALETA)
+======================= */
+:root{
+    --violeta: #9B5DE5;
+    --turquesa: #00BFA6;
+    --turquesa-soft: #2EC4B6;
+    --aqua: #70F0E0;
+    --aqua-soft: #BCF7EC;
+
+    --bg: #f9f9fb;
+    --text: #1f1f1f;
 }
 
-body {
-  background: linear-gradient(135deg, var(--violeta-deep), var(--turquesa-strong));
-  color: var(--text);
-  min-height: 100vh;
+/* =======================
+   BODY
+======================= */
+body{
+    background: var(--bg);
+    color: var(--text);
 }
 
-/* Layout */
-.app {
-  display: flex;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 250px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(12px);
-  padding: 20px;
-  height: 100vh;
-}
-
-.sidebar h2 {
-  margin-bottom: 20px;
-}
-
-.sidebar a {
-  display: block;
-  padding: 12px;
-  margin: 5px 0;
-  border-radius: 10px;
-  color: var(--aqua-light);
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.sidebar a:hover {
-  background: var(--violeta-soft);
-}
-
-/* Main */
-.main {
-  flex: 1;
-  padding: 30px;
-}
-
-/* Cards */
-.card {
-  background: var(--card);
-  padding: 20px;
-  border-radius: 16px;
-  margin: 10px 0;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.card h3 {
-  font-size: 28px;
-}
-
-/* Buttons */
-button {
-  background: linear-gradient(90deg, var(--turquesa-strong), var(--violeta-soft));
-  border: none;
-  padding: 10px 15px;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-/* Login */
-.login-container {
-  max-width: 360px;
-  margin: 120px auto;
-  background: var(--card);
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: none;
-}
-
+/* =======================
+   HERO (LANDING)
+======================= */
 .hero{
+    height: 100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:80px 20px;
-    background: linear-gradient(135deg,#6A0DAD,#00BFA6);
+    padding:20px;
+
+    background: linear-gradient(135deg, var(--violeta), var(--turquesa));
     color:white;
 }
 
 .hero h1{
-    font-size:40px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .hero p{
-    font-size:18px;
-    opacity:0.9;
+    max-width: 500px;
+    margin-bottom: 30px;
 }
 
-.cta{
-    margin-top:20px;
+/* LOGO LANDING */
+.logo-landing{
+    width: 140px;
+    margin-bottom: 20px;
 }
 
+/* =======================
+   BOTONES
+======================= */
 .btn{
-    background:#00BFA6;
-    color:white;
-    padding:12px 20px;
-    border-radius:8px;
+    padding: 12px 24px;
+    border-radius: 8px;
     text-decoration:none;
+    font-weight:600;
     margin:5px;
+    display:inline-block;
+
+    background: white;
+    color: var(--violeta);
+    transition:0.3s;
+}
+
+.btn:hover{
+    background: var(--aqua);
+    color: black;
 }
 
 .btn.secondary{
-    background:transparent;
-    border:1px solid white;
+    background: transparent;
+    border:2px solid white;
+    color:white;
 }
 
-.features{
-    display:flex;
-    gap:20px;
-    padding:40px;
+.btn.secondary:hover{
+    background:white;
+    color: var(--violeta);
 }
 
+/* =======================
+   SECCIONES
+======================= */
+.features,
 .pricing{
+    padding: 60px 20px;
     text-align:center;
-    padding:40px;
+}
+
+/* =======================
+   CARDS
+======================= */
+.card{
+    background:white;
+    padding:20px;
+    margin:10px;
+    border-radius:12px;
+    display:inline-block;
+    min-width:220px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+/* =======================
+   LOGIN
+======================= */
+.login-body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background: linear-gradient(135deg, var(--violeta), var(--turquesa-soft));
+}
+
+.login-box{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    width:300px;
+    text-align:center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.login-box input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ddd;
+}
+
+.login-box button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+
+    background: var(--violeta);
+    color:white;
+}
+
+.login-box button:hover{
+    background: var(--turquesa);
+}
+
+/* =======================
+   SIDEBAR (APP)
+======================= */
+.sidebar{
+    width:220px;
+    background: var(--violeta);
+    color:white;
+    height:100vh;
+    padding:20px;
+    position:fixed;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    margin:10px 0;
+    text-decoration:none;
+}
+
+.sidebar a:hover{
+    color: var(--aqua);
+}
+
+/* =======================
+   MAIN (APP)
+======================= */
+.main{
+    margin-left:240px;
+    padding:20px;
+}
+
+/* =======================
+   DASHBOARD CARDS
+======================= */
+.main .card{
+    display:inline-block;
+    width:200px;
+    margin:10px;
+    text-align:center;
+    background: linear-gradient(135deg, var(--aqua-soft), white);
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer{
+    text-align:center;
+    padding:20px;
+    background: var(--aqua-soft);
 }

@@ -5,12 +5,15 @@ console.log("LOGIN PRO FINAL");
 // =======================
 async function login(){
 
+    console.log("CLICK LOGIN");
+
     const { data, error } = await supabase.auth.signInWithPassword({
         email: email.value,
         password: password.value
     });
 
     if(error){
+        console.error(error);
         alert(error.message);
         return;
     }
@@ -22,14 +25,12 @@ async function login(){
         return;
     }
 
-    // buscar usuario interno
     let { data: usuarioDB, error: errUser } = await supabase
         .from("usuarios")
         .select("*")
         .eq("auth_id", user.id)
         .single();
 
-    // AUTO CREAR SI NO EXISTE
     if(errUser || !usuarioDB){
 
         console.log("Creando usuario interno...");
@@ -102,7 +103,6 @@ async function registro(){
 
     const user = data.user;
 
-    // crear agencia
     const { data: agencia } = await supabase
         .from("agencias")
         .insert([{
@@ -112,7 +112,6 @@ async function registro(){
         .select()
         .single();
 
-    // crear usuario interno
     const { data: usuarioDB } = await supabase
         .from("usuarios")
         .insert([{
